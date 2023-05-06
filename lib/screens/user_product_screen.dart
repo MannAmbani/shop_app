@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../provider/product_provider.dart';
 import '../widgets/user_product_item.dart';
 import '../widgets/app_drawer.dart';
+import '../screens/edit_product_screen.dart';
 
 class UserProductScreen extends StatelessWidget {
   static const routeName = '/user-products'; 
@@ -14,7 +15,7 @@ class UserProductScreen extends StatelessWidget {
         title: Text('Your Products'),
         actions: [
           IconButton(onPressed: () {
-
+              Navigator.of(context).pushNamed(EditProductScreen.routeName);
           }, icon: Icon(Icons.add)),
         ],
       ),
@@ -26,6 +27,7 @@ class UserProductScreen extends StatelessWidget {
       ),itemCount:productData.items.length ,),),
 
       drawer: AppDrawer(),
+      
     );
   }
 }
