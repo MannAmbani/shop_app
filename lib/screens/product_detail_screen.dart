@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../provider/product_provider.dart';
+import '../provider/products.dart';
 
 class ProductDetailScreen extends StatelessWidget {
   // final String title;

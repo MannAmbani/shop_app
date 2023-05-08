@@ -66,8 +66,26 @@ class Products with ChangeNotifier{ //with refers as mixins (inheritense lite) a
     return _items.firstWhere((prod) => prod.id == id);
   }
 
-  void addProduct(){
+  void addProduct(Product product){
     // _items.add(value);
+    final newProduct = Product(title: product.title,description: product.description,price: product.price,imageUrl: product.imageUrl,id: DateTime.now().toString());
+    _items.add(newProduct);
+    // _items.insert(0, newProduct); // at the start of the list
     notifyListeners();// notifies the listeners when item change
+  }
+
+  void updateProduct(String id,Product newProduct){
+    final prodIndex = _items.indexWhere((prod) => prod.id == id);
+    if(prodIndex >= 0){
+    _items[prodIndex] = newProduct;
+    notifyListeners();
+    }else{
+      print('....');
+    }
+  }
+
+  void deleteProducts(String id){
+    _items.removeWhere((prodId) => prodId.id == id);
+    notifyListeners();
   }
 }

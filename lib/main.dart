@@ -5,7 +5,7 @@ import './provider/cart.dart';
 import './screens/products_overview_screen.dart';
 import './screens/product_detail_screen.dart';
 import './screens/cart_screen.dart';
-import './provider/product_provider.dart';
+import 'provider/products.dart';
 import './provider/orders.dart';
 
 import './screens/orders_screen.dart';
